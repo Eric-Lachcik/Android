@@ -1,11 +1,10 @@
 package com.example.persistencia;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,12 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button buttonSharedPreference = findViewById(R.id.buttonSharedPreference);
-
+        Button buttonMemoriaInterna = findViewById(R.id.buttonMemoria);
 
         buttonSharedPreference.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         });
 
+        buttonMemoriaInterna.setOnClickListener(v -> {
+            Intent intent1 = new Intent(MainActivity.this, ThirdActivity.class);
+            startActivity(intent1);
+        });
     }
 }
