@@ -26,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        Button buttonSqlite = findViewById(R.id.Sqlited);
         Button buttonSharedPreference = findViewById(R.id.buttonSharedPreference);
         Button buttonMemoriaInterna = findViewById(R.id.buttonMemoria);
+        Button buttonLectura = findViewById(R.id.lecturaFitxer);
+        Button buttonMemoriaExterna = findViewById(R.id.buttonMemoriaExterna);
+
 
         buttonSharedPreference.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
@@ -38,6 +41,21 @@ public class MainActivity extends AppCompatActivity {
         buttonMemoriaInterna.setOnClickListener(v -> {
             Intent intent1 = new Intent(MainActivity.this, ThirdActivity.class);
             startActivity(intent1);
+        });
+
+        buttonLectura.setOnClickListener(v -> {
+            Intent intent2 = new Intent(MainActivity.this, FourthActivity.class);
+            startActivity(intent2);
+        });
+
+        buttonMemoriaExterna.setOnClickListener(v -> {
+            Intent intent3 = new Intent(MainActivity.this, FifthActivity.class);
+            startActivity(intent3);
+        });
+
+        buttonSqlite.setOnClickListener(v -> {
+            Intent intent4 = new Intent(MainActivity.this, SixActivity.class);
+            startActivity(intent4);
         });
     }
 }

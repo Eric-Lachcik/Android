@@ -1,6 +1,7 @@
 package com.example.persistencia;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,13 +13,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class ThirdActivity extends AppCompatActivity {
 
-    private static final String FILE_NAME = "archivo.txt";
+    private static final String FILE_NAME = "archivus.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,46 +40,56 @@ public class ThirdActivity extends AppCompatActivity {
         TextView textViewFileContent = findViewById(R.id.textViewFileContent);
 
 
-        buttonSaveToFile.setOnClickListener(v -> {
-            String textToSave = editTextFile.getText().toString();
-            if (!textToSave.isEmpty()) {
-                saveToFile(textToSave);
-                editTextFile.setText("");
-                Toast.makeText(this, "Text desat correctament", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "El camp està buit!", Toast.LENGTH_SHORT).show();
+        buttonSaveToFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textToSave = editTextFile.getText().toString();
+                if (!textToSave.isEmpty()) {
+                    saveToFile(textToSave);
+                    Toast.makeText(ThirdActivity.this, "Text desat correctament!", Toast.LENGTH_SHORT).show();
+                    editTextFile.getText().clear();
+                } else {
+                    Toast.makeText(ThirdActivity.this, "Si us plau, escriu alguna cosa.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        buttonRetrieveFromFile.setOnClickListener(v -> {
-            String fileContent = readFromFile();
-            if (!fileContent.isEmpty()) {
-                textViewFileContent.setText(fileContent);
-            } else {
-                textViewFileContent.setText("El fitxer està buit");
+        buttonRetrieveFromFile.setOnClickListener(new View.OnClickListener()  {
+            @Override
+            public void onClick(View v) {
+                String retrievedText = readFromFile();
+                if (retrievedText != null) {
+                    textViewFileContent.setText(retrievedText);
+                } else {
+                    Toast.makeText(ThirdActivity.this, "No s'ha trobat cap dada.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
-    private void saveToFile(String text) {
+    private void saveToFile(String content) {
         try (FileOutputStream fos = openFileOutput(FILE_NAME, MODE_PRIVATE)) {
-            fos.write(text.getBytes());
+            fos.write(content.getBytes());
         } catch (IOException e) {
-            Toast.makeText(this, "Error al desar el fitxer!", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 
 
     private String readFromFile() {
         StringBuilder stringBuilder = new StringBuilder();
-        try (FileInputStream fis = openFileInput(FILE_NAME)) {
-            int character;
-            while ((character = fis.read()) != -1) {
-                stringBuilder.append((char) character);
+        try (FileInputStream fis = openFileInput(FILE_NAME);
+             InputStreamReader isr = new InputStreamReader(fis);
+             BufferedReader br = new BufferedReader(isr)) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                stringBuilder.append(line).append("\n");
             }
         } catch (IOException e) {
-            Toast.makeText(this, "Error al llegir el fitxer!", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+            return null;
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString().trim();
     }
 }
