@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="382dp"
+        android:layout_height="72dp"
+        android:textAlignment="viewEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.198"
+        tools:ignore="MissingConstraints" />
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/buttonCE"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:backgroundTint="#6A7187"
+                android:text="CE"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/buttonCA"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:backgroundTint="#6A7187"
+                android:text="CA"
+                android:onClick="resetCalc"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/buttonDelete"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:backgroundTint="#6A7187"
+                android:text="--"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="278dp"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="1"
+                android:tag="1"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="2"
+                android:tag="2"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="3"
+                android:tag="3"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="279dp"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="4"
+                android:tag="4"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="5"
+                android:tag="5"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:onClick="clickNumeros"
+                android:text="6"
+                android:tag="6"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text="7"
+                android:tag="7"
+                android:onClick="clickNumeros"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text="8"
+                android:tag="8"
+                android:onClick="clickNumeros"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text="9"
+                android:tag="9"
+                android:onClick="clickNumeros"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/buttonSumaResta"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text="--"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text="0"
+                android:tag="0"
+                android:onClick="clickNumeros"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/buttonComa"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:backgroundTint="#D0D7F4"
+                android:text=","
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:layout_width="74dp"
+        android:layout_height="397dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        tools:ignore="MissingConstraints">
+
+
+        <Button
+            android:id="@+id/buttonDividir"
+            android:layout_width="71dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#95A5DC"
+            android:onClick="clickOperadores"
+            android:tag="/"
+            android:text="/"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/buttonMultiplicar"
+            android:layout_width="71dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#95A5DC"
+            android:onClick="clickOperadores"
+            android:tag="X"
+            android:text="X"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/buttonResta"
+            android:layout_width="71dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#95A5DC"
+            android:onClick="clickOperadores"
+            android:tag="-"
+            android:text="-"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/buttonSuma"
+            android:layout_width="71dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#95A5DC"
+            android:onClick="clickOperadores"
+            android:tag="+"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/buttonResultado"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#95A5DC"
+            android:onClick="calcularOperacion"
+            android:text="="
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
