@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         updateOperatorButtonsState();
     }
 
-    // Actualizamos estado de los  botones de los operadores
+    // Actualizamos el estado de los  botones de los operadores
     private void updateOperatorButtonsState() {
         boolean enable = canAddOperator();
         buttonDividir.setEnabled(enable);
